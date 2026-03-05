@@ -22,8 +22,8 @@
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80&w=1000') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                        url('https://offtracktravel.ca/wp-content/uploads/2019/11/cathedral-grove-big-tree-vancouver-island.jpeg') center/cover;
             height: 60vh;
             display: flex;
             flex-direction: column;
@@ -34,139 +34,157 @@
             padding: 20px;
         }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
-        .subtitle { font-size: 1.2rem; max-width: 600px; font-weight: 300; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; max-width: 650px; font-weight: 300; }
 
-        .container { max-width: 1000px; margin: -50px auto 50px; padding: 0 20px; }
+        .container { max-width: 1100px; margin: -60px auto 50px; padding: 0 20px; }
 
-        .region-title { 
+        .region-section { margin-bottom: 60px; }
+        
+        .region-header { 
             background: var(--forest-dark); 
             color: white; 
-            padding: 15px 25px; 
-            border-radius: 8px;
-            margin-top: 50px;
+            padding: 12px 30px; 
+            border-radius: 50px;
             display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .card:hover { transform: translateY(-5px); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
 
+        .card-img-wrapper { height: 240px; overflow: hidden; position: relative; }
+        
         .card-img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
-            background-color: #ddd;
+            transition: transform 0.5s ease;
         }
+        
+        .card:hover .card-img { transform: scale(1.05); }
 
-        .card-content { padding: 20px; }
-        .card-content h3 { margin-top: 0; color: var(--moss-green); }
-        .card-content p { font-size: 0.9rem; color: #555; height: 80px; overflow: hidden; }
+        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-content h3 { margin: 0 0 10px 0; color: var(--moss-green); font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+        .card-content p { font-size: 0.95rem; color: #444; margin-bottom: 20px; flex-grow: 1; }
 
         .btn {
-            display: inline-block;
+            display: block;
             background: var(--moss-green);
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
+            text-align: center;
             transition: background 0.3s;
         }
 
         .btn:hover { background: var(--forest-dark); }
 
-        footer { text-align: center; padding: 40px; color: #888; font-size: 0.8rem; }
+        footer { text-align: center; padding: 60px 20px; background: #eceae3; color: #555; }
+        .footer-note { font-style: italic; margin-bottom: 10px; display: block; }
+
+        @media (max-width: 600px) {
+            header { height: 50vh; }
+            .container { margin-top: -30px; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Ancient Giants</h1>
-    <p class="subtitle">Step into the cathedral of nature. Discover the oldest living residents of British Columbia.</p>
+    <h1>The Ancient Forests</h1>
+    <p class="subtitle">British Columbia is home to some of the oldest living beings on Earth. Scan, explore, and protect.</p>
 </header>
 
 <div class="container">
     
-    <h2 class="region-title">Lower Mainland</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1590424753062-3251f47810ff?auto=format&fit=crop&q=80&w=400" class="card-img" alt="Lighthouse Park">
-            <div class="card-content">
-                <h3>Lighthouse Park</h3>
-                <p>Visit 500-year-old Douglas firs and western red cedars in the "Valley of the Giants."</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Lighthouse+Park+West+Vancouver" class="btn">Get Directions</a>
+    <div class="region-section">
+        <div class="region-header"><h3>Lower Mainland</h3></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img-wrapper"><img src="https://westvancouver.ca/sites/default/files/styles/768_307/public/media/images/lighthouse_2.jpeg" class="card-img" alt="Lighthouse Park"></div>
+                <div class="card-content">
+                    <h3>Lighthouse Park</h3>
+                    <p>Wander through the "Valley of the Giants" featuring 500-year-old Douglas firs and western red cedars on West Vancouver's rugged coast.</p>
+                    <a href="https://www.google.com/maps/search/Lighthouse+Park+Valley+of+the+Giants" target="_blank" class="btn">View on Maps</a>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=400" class="card-img" alt="Chilliwack Lake">
-            <div class="card-content">
-                <h3>Chilliwack Lake</h3>
-                <p>Trails traversing old-growth cedar, fir, and spruce groves in a stunning provincial park.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Chilliwack+Lake+Provincial+Park" class="btn">Get Directions</a>
+            <div class="card">
+                <div class="card-img-wrapper"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/f5/d2/51/surrounding-mountains.jpg" class="card-img" alt="Chilliwack Lake"></div>
+                <div class="card-content">
+                    <h3>Chilliwack Lake Park</h3>
+                    <p>Traverse pristine groves of old-growth cedar, fir, and spruce set against a dramatic mountain backdrop.</p>
+                    <a href="https://www.google.com/maps/search/Chilliwack+Lake+Provincial+Park" target="_blank" class="btn">View on Maps</a>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=400" class="card-img" alt="Rice Lake">
-            <div class="card-content">
-                <h3>Lower Seymour Area</h3>
-                <p>Features a 3 km route around Rice Lake with significant, towering old-growth trees.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Rice+Lake+North+Vancouver" class="btn">Get Directions</a>
+            <div class="card">
+                <div class="card-img-wrapper"><img src="https://images.spaicelabs.com/images/flus6j8v/production/9a4824f27c9786f0b505b83757d3c95016c14d8f-1048x688.jpg" class="card-img" alt="Rice Lake"></div>
+                <div class="card-content">
+                    <h3>Lower Seymour Reserve</h3>
+                    <p>A family-friendly 3 km route around Rice Lake featuring massive, significant old-growth survivors in North Vancouver.</p>
+                    <a href="https://www.google.com/maps/search/Rice+Lake+North+Vancouver" target="_blank" class="btn">View on Maps</a>
+                </div>
             </div>
         </div>
     </div>
 
-    <h2 class="region-title">Vancouver Island</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1629814249584-bd4d53cf0e7d?auto=format&fit=crop&q=80&w=400" class="card-img" alt="Cathedral Grove">
-            <div class="card-content">
-                <h3>Cathedral Grove</h3>
-                <p>Walk among 800-year-old Douglas firs. One of the most accessible ancient stands in BC.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Cathedral+Grove+MacMillan+Provincial+Park" class="btn">Get Directions</a>
+    <div class="region-section">
+        <div class="region-header"><h3>Vancouver Island</h3></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img-wrapper"><img src="https://offtracktravel.ca/wp-content/uploads/2019/11/cathedral-grove-big-tree-vancouver-island.jpeg" class="card-img" alt="Cathedral Grove"></div>
+                <div class="card-content">
+                    <h3>Cathedral Grove</h3>
+                    <p>Home to 800-year-old Douglas firs. A breathtaking, world-famous stand located right on Highway 4.</p>
+                    <a href="https://www.google.com/maps/search/Cathedral+Grove+MacMillan+Provincial+Park" target="_blank" class="btn">View on Maps</a>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=400" class="card-img" alt="Big Lonely Doug">
-            <div class="card-content">
-                <h3>Avatar Grove</h3>
-                <p>Home to "Big Lonely Doug," a 1,000-year-old tree standing tall in a rugged landscape.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Avatar+Grove+Port+Renfrew" class="btn">Get Directions</a>
+            <div class="card">
+                <div class="card-img-wrapper"><img src="https://www.sierraclub.org/sites/default/files/uploads-wysiwig/2020-9-Trailhead-Big-Lonely-Doug-WB.png" class="card-img" alt="Big Lonely Doug"></div>
+                <div class="card-content">
+                    <h3>Avatar Grove</h3>
+                    <p>Visit "Big Lonely Doug," a 1,000-year-old sentinel standing as a reminder of the forest's grandeur.</p>
+                    <a href="https://www.google.com/maps/search/Big+Lonely+Doug+Avatar+Grove" target="_blank" class="btn">View on Maps</a>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1559239115-d43f29455bb3?auto=format&fit=crop&q=80&w=400" class="card-img" alt="Rainforest Trail">
-            <div class="card-content">
-                <h3>Pacific Rim Park</h3>
-                <p>Rainforest Trail (Loops A & B) feature massive 2,000+ year old cedars on easy boardwalks.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Rainforest+Trail+Ucluelet" class="btn">Get Directions</a>
+            <div class="card">
+                <div class="card-img-wrapper"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/12/e5/91/pacific-rim-national.jpg" class="card-img" alt="Rainforest Trail"></div>
+                <div class="card-content">
+                    <h3>Pacific Rim National Park</h3>
+                    <p>Accessible boardwalks through the Rainforest Trail feature massive 2,000+ year-old cedars and hemlocks.</p>
+                    <a href="https://www.google.com/maps/search/Rainforest+Trail+Pacific+Rim+National+Park" target="_blank" class="btn">View on Maps</a>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=400" class="card-img" alt="Meares Island">
-            <div class="card-content">
-                <h3>Meares Island</h3>
-                <p>The Big Tree Trail features giant cedars estimated to be between 1,500 and 2,000 years old.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Big+Tree+Trail+Meares+Island" class="btn">Get Directions</a>
+            <div class="card">
+                <div class="card-img-wrapper"><img src="https://images.squarespace-cdn.com/content/v1/58d1d4bc1e5b6c1243a589f5/1677303011119-K7AJ4G4E22E8VYTMLMTQ/Tofno+Hot+Springs.jpg" class="card-img" alt="Meares Island"></div>
+                <div class="card-content">
+                    <h3>Meares Island Trail</h3>
+                    <p>The Big Tree Trail boasts giants estimated to be up to 2,000 years old. Accessible by boat from Tofino.</p>
+                    <a href="https://www.google.com/maps/search/Big+Tree+Trail+Meares+Island" target="_blank" class="btn">View on Maps</a>
+                </div>
             </div>
         </div>
     </div>
@@ -174,8 +192,8 @@
 </div>
 
 <footer>
-    <p>Please respect the forest. Stay on marked trails to protect ancient root systems.</p>
-    <p>&copy; 2026 Ancient Forest Guide</p>
+    <span class="footer-note">Respect the roots. Leave no trace.</span>
+    <p>© 2026 British Columbia Old Growth Alliance</p>
 </footer>
 
 </body>
